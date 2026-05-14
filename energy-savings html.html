@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Free Washer & Dryer for Qualifying Homeowners | IE Energy Savings Program</title>
+<meta name="description" content="Rancho Cucamonga, Chino Hills & Upland homeowners may qualify for a FREE washer & dryer plus dramatically lower electric bills. See if you qualify today."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#f7f5ef;
+  --white:#ffffff;
+  --dark:#0d1a0f;
+  --forest:#1a3320;
+  --green:#2d5a3d;
+  --sage:#4a7c59;
+  --mint:#7ab893;
+  --gold:#c9a84c;
+  --amber:#e8b84b;
+  --cream:#faf6ed;
+  --warm:#f0ebe0;
+  --stone:#d4cfc4;
+  --muted:#7a7468;
+  --red:#c0392b;
+  --border:rgba(45,90,61,0.12);
+  --shadow:0 4px 32px rgba(13,26,15,0.08);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--dark);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(13,26,15,0.9);z-index:999;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--white);width:100%;max-width:480px;position:relative;animation:popIn 0.3s ease;overflow:hidden;}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,0.6);font-size:24px;cursor:pointer;z-index:2;}
+.modal-head{background:var(--forest);padding:26px 32px;}
+.mh-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:white;}
+.mh-title span{color:var(--amber);}
+.mh-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;}
+.modal-body{padding:28px 32px;}
+.modal-success{display:none;padding:44px 32px;text-align:center;}
+.msi{font-size:52px;margin-bottom:16px;}
+.mst{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--forest);margin-bottom:8px;}
+.mss{font-size:13px;color:var(--muted);line-height:1.65;}
+
+/* ── INPUTS ── */
+.fi{width:100%;background:var(--warm);border:1px solid var(--border);color:var(--dark);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:10px;transition:border-color 0.2s;}
+.fi::placeholder{color:var(--muted);}
+.fi:focus{border-color:var(--sage);background:white;}
+.fsel{width:100%;background:var(--warm);border:1px solid var(--border);color:var(--muted);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:10px;cursor:pointer;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.sbtn{width:100%;background:var(--green);color:white;border:none;padding:17px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-top:4px;}
+.sbtn:hover{background:var(--forest);}
+.sbtn:disabled{opacity:0.5;cursor:not-allowed;}
+.fnote{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;}
+
+/* ── OFFER BANNER ── */
+.offer-banner{background:linear-gradient(135deg,var(--forest),#0d2210);padding:14px 24px;text-align:center;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
+.ob-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--amber);animation:pulse 1.5s infinite;}
+.ob-text{font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);letter-spacing:0.04em;}
+.ob-text strong{color:var(--amber);}
+.ob-btn{background:var(--amber);color:var(--dark);padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;border:none;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+.ob-btn:hover{background:#f0c85a;}
+
+/* ── NAV ── */
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.nlogo-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--forest);}
+.nlogo-tag{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;display:block;margin-top:1px;}
+.nlinks{display:flex;gap:24px;list-style:none;}
+.nlinks a{color:var(--green);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color 0.2s;cursor:pointer;}
+.nlinks a:hover{color:var(--forest);}
+.nright{display:flex;align-items:center;gap:12px;}
+.nphone{font-size:15px;font-weight:700;color:var(--forest);text-decoration:none;}
+.btn-nav{background:var(--green);color:white;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.btn-nav:hover{background:var(--forest);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--dark);text-decoration:none;cursor:pointer;}
+
+/* ── HERO ── */
+.hero{background:var(--white);padding:80px 40px 0;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage);margin-bottom:20px;display:flex;align-items:center;gap:10px;animation:fadeUp 0.9s ease 0.1s both;}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--sage);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,4.5vw,64px);font-weight:700;line-height:1.0;letter-spacing:-0.02em;color:var(--dark);margin-bottom:20px;animation:fadeUp 0.9s ease 0.2s both;}
+.hero h1 em{font-style:italic;color:var(--green);}
+.hero h1 .highlight{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:16px;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:24px;animation:fadeUp 0.9s ease 0.3s both;}
+.hero-offer-box{background:linear-gradient(135deg,#fffbf0,#fff8e6);border:1px solid rgba(201,168,76,0.3);padding:20px 22px;margin-bottom:28px;animation:fadeUp 0.9s ease 0.4s both;}
+.hob-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.hob-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.hob-sub{font-size:12px;color:var(--muted);line-height:1.55;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;animation:fadeUp 0.9s ease 0.45s both;}
+.ht{font-size:12px;font-weight:500;color:var(--green);display:flex;align-items:center;gap:6px;}
+.ht::before{content:'✓';color:var(--amber);font-weight:800;}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;animation:fadeUp 0.9s ease 0.5s both;}
+.btn-primary{background:var(--green);color:white;border:none;padding:16px 28px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.btn-primary:hover{background:var(--forest);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--green);border:1px solid var(--border);padding:16px 28px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.btn-outline:hover{border-color:var(--green);}
+.hero-areas{font-size:12px;color:var(--muted);animation:fadeUp 0.9s ease 0.6s both;}
+.hero-areas strong{color:var(--green);}
+
+/* ── HERO VISUAL ── */
+.hero-visual{background:linear-gradient(160deg,#0a1a0c 0%,#142b18 55%,#1a3a20 100%);min-height:500px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:48px 40px;animation:fadeUp 0.9s ease 0.2s both;}
+.hv-g1{position:absolute;top:-80px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(122,184,147,0.14) 0%,transparent 70%);pointer-events:none;}
+.hv-g2{position:absolute;bottom:-60px;left:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(232,184,75,0.1) 0%,transparent 70%);pointer-events:none;}
+.hv-inner{position:relative;z-index:1;}
+.hv-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(122,184,147,0.8);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.hv-eyebrow::before{content:'';display:block;width:16px;height:1px;background:rgba(122,184,147,0.5);}
+.hv-big{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:700;color:white;line-height:0.85;margin-bottom:6px;}
+.hv-big span{color:var(--amber);}
+.hv-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:rgba(255,255,255,0.55);margin-bottom:32px;}
+.hv-divider{width:40px;height:1px;background:linear-gradient(to right,rgba(201,168,76,0.7),transparent);margin-bottom:28px;}
+
+/* Offer card inside visual */
+.hv-offer{background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.25);padding:20px;margin-bottom:28px;}
+.hvo-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.hvo-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:white;margin-bottom:4px;}
+.hvo-sub{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.55;}
+
+.hv-checks{display:flex;flex-direction:column;gap:11px;margin-bottom:28px;}
+.hv-check{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.65);font-weight:400;}
+.hv-check::before{content:'✓';width:18px;height:18px;border:1px solid rgba(122,184,147,0.4);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:var(--mint);flex-shrink:0;}
+
+.hv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);}
+.hvstat{background:#0a1a0c;padding:14px 10px;text-align:center;}
+.hvstat-num{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--amber);display:block;}
+.hvstat-label{font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:2px;}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--forest);border-top:1px solid rgba(255,255,255,0.05);padding:14px 24px;}
+.trust-bar-inner{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.tb{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:500;color:rgba(255,255,255,0.6);letter-spacing:0.06em;text-transform:uppercase;}
+.tb::before{content:'✓';width:16px;height:16px;border-radius:50%;background:rgba(122,184,147,0.15);border:1px solid rgba(122,184,147,0.3);display:inline-flex;align-items:center;justify-content:center;font-size:8px;color:var(--mint);flex-shrink:0;}
+
+/* ── SECTIONS ── */
+.sec{padding:80px 40px;}
+.seci{max-width:1100px;margin:0 auto;}
+.slabel{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.slabel::before{content:'';display:block;width:20px;height:1px;background:var(--sage);}
+.sh2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:var(--dark);}
+.sh2 em{font-style:italic;color:var(--green);}
+
+/* ── QUALIFY SECTION ── */
+.qualify-bg{background:var(--white);}
+.qualify-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:48px;}
+.qualify-cards{display:flex;flex-direction:column;gap:2px;}
+.qcard{background:var(--warm);padding:22px 24px;border-left:2px solid transparent;transition:all 0.3s;cursor:pointer;}
+.qcard:hover,.qcard.active{background:var(--white);border-left-color:var(--green);box-shadow:var(--shadow);}
+.qcard-icon{font-size:24px;margin-bottom:8px;}
+.qcard-title{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:4px;}
+.qcard-desc{font-size:13px;color:var(--muted);line-height:1.55;}
+.qualify-right{background:linear-gradient(145deg,var(--forest),#0d2210);padding:40px;position:relative;overflow:hidden;}
+.qualify-right::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(122,184,147,0.1) 0%,transparent 70%);}
+.qr-inner{position:relative;z-index:1;}
+.qr-label{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint);margin-bottom:14px;}
+.qr-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:white;margin-bottom:8px;line-height:1.1;}
+.qr-title span{color:var(--amber);}
+.qr-sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;margin-bottom:24px;}
+.qr-offer{background:rgba(232,184,75,0.1);border:1px solid rgba(232,184,75,0.25);padding:16px 18px;margin-bottom:20px;}
+.qr-offer-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.qr-offer-text{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;}
+.qr-btn{width:100%;background:var(--amber);color:var(--dark);border:none;padding:16px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.qr-btn:hover{background:#f0c85a;}
+.qr-note{font-size:11px;color:rgba(255,255,255,0.3);text-align:center;margin-top:10px;}
+
+/* ── HOW IT WORKS ── */
+.how-bg{background:var(--bg);}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:44px;}
+.how-card{background:var(--white);padding:32px 22px;border-top:2px solid transparent;transition:border-color 0.3s;}
+.how-card:hover{border-top-color:var(--green);}
+.how-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:rgba(45,90,61,0.12);line-height:1;margin-bottom:14px;}
+.how-icon{font-size:26px;margin-bottom:12px;}
+.how-title{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px;}
+.how-desc{font-size:12px;color:var(--muted);line-height:1.65;}
+
+/* ── AREAS ── */
+.areas-bg{background:var(--white);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:44px;}
+.area-card{background:var(--warm);padding:26px;border-bottom:2px solid transparent;transition:all 0.3s;cursor:pointer;}
+.area-card:hover{background:var(--white);border-bottom-color:var(--green);box-shadow:var(--shadow);}
+.area-city{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.area-zip{font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.area-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.atag{background:rgba(45,90,61,0.08);border:1px solid rgba(45,90,61,0.15);color:var(--green);padding:3px 9px;font-size:11px;font-weight:500;}
+.area-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+.area-desc strong{color:var(--green);}
+.area-btn{font-size:11px;font-weight:600;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0;}
+
+/* ── SAVINGS ── */
+.savings-bg{background:linear-gradient(160deg,var(--forest),#0d2210);padding:80px 40px;}
+.savings-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.savings-label{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--mint);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px;}
+.savings-label::before,.savings-label::after{content:'';display:block;width:20px;height:1px;background:var(--mint);}
+.savings-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:white;margin-bottom:12px;}
+.savings-sub{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:52px;}
+.savings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:52px;}
+.scard{background:rgba(255,255,255,0.04);padding:32px 24px;border-top:1px solid rgba(255,255,255,0.06);}
+.scard-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--amber);line-height:1;margin-bottom:6px;}
+.scard-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.scard-desc{font-size:13px;color:rgba(255,255,255,0.35);margin-top:8px;line-height:1.55;}
+
+/* ── REVIEWS ── */
+.rev-bg{background:var(--bg);}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:44px;}
+.rev-card{background:var(--white);padding:30px;border-left:2px solid transparent;transition:border-color 0.3s;box-shadow:var(--shadow);}
+.rev-card:hover{border-left-color:var(--green);}
+.rev-stars{color:var(--amber);font-size:13px;letter-spacing:2px;margin-bottom:12px;}
+.rev-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.75;color:var(--dark);margin-bottom:16px;}
+.rev-name{font-size:13px;font-weight:600;color:var(--dark);}
+.rev-area{font-size:11px;color:var(--muted);margin-top:2px;}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--amber);padding:64px 40px;text-align:center;}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.1;}
+.cta-title em{font-style:italic;color:var(--forest);}
+.cta-sub{font-size:15px;font-weight:300;color:rgba(13,26,15,0.65);margin-bottom:32px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:var(--forest);color:white;border:none;padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.btn-dark:hover{background:var(--dark);}
+.btn-outline-dark{background:transparent;color:var(--dark);border:1px solid rgba(13,26,15,0.3);padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.btn-outline-dark:hover{border-color:var(--dark);}
+
+/* ── INFO ── */
+.info-bar{background:var(--forest);padding:52px 40px;}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto;text-align:center;}
+.iicon{font-size:24px;margin-bottom:10px;}
+.ititle{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--amber);margin-bottom:6px;}
+.ibody{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.ibody strong{color:rgba(255,255,255,0.8);}
+.ibody a{color:var(--amber);text-decoration:none;}
+
+/* ── FOOTER ── */
+footer{background:#060e07;border-top:1px solid rgba(255,255,255,0.05);padding:48px 40px 28px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:36px;}
+.fbrand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:white;}
+.ftagline{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin:4px 0 10px;}
+.fdesc{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.7;max-width:220px;}
+.fphone{font-size:16px;font-weight:600;color:var(--amber);text-decoration:none;display:block;margin-top:12px;}
+.fctitle{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:14px;}
+.flinks{list-style:none;}
+.flinks li{margin-bottom:8px;}
+.flinks a{font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;cursor:pointer;}
+.flinks a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.05);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.fcopy{font-size:12px;color:rgba(255,255,255,0.2);}
+.faward{font-size:11px;color:var(--amber);}
+
+/* DISCLAIMER */
+.disclaimer{background:var(--bg);padding:24px 40px;text-align:center;}
+.disclaimer p{font-size:11px;color:var(--muted);max-width:800px;margin:0 auto;line-height:1.65;}
+
+/* STICKY MOBILE */
+.smob{display:none;position:fixed;bottom:0;left:0;right:0;z-index:88;background:var(--green);color:white;padding:18px;text-align:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;}
+
+/* FORM STEPS */
+.step{display:none;}
+.step.active{display:block;animation:fadeUp 0.35s ease both;}
+.step-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.step-num{width:20px;height:20px;border-radius:50%;background:var(--green);color:white;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:16px;}
+.back-btn{background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;padding:0;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.qual-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.qual-opt{background:var(--warm);border:2px solid var(--border);padding:14px 16px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:10px;}
+.qual-opt:hover{border-color:var(--green);background:white;}
+.qual-opt.selected{border-color:var(--green);background:white;box-shadow:0 0 0 3px rgba(45,90,61,0.08);}
+.qual-opt-text{font-size:13px;font-weight:600;color:var(--dark);}
+.qual-opt-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes popIn{from{opacity:0;transform:scale(0.94);}to{opacity:1;transform:scale(1);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+
+@media(max-width:900px){
+  .hero-inner,.qualify-grid,.why-grid{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+  .how-grid,.areas-grid,.rev-grid,.savings-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px;}
+  .info-grid{grid-template-columns:1fr;gap:20px;}
+  .smob{display:block;}
+  nav{padding:14px 20px;}
+  .nlinks{display:none;}
+  .hamburger{display:flex;}
+  .hero{padding:52px 20px 0;}
+  .sec{padding:56px 20px;}
+  .qual-grid{grid-template-columns:1fr;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .frow{grid-template-columns:1fr;}
+}
+@media(max-width:580px){.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-head">
+      <div class="mh-title">Check Your <span>Free Offer Eligibility</span></div>
+      <div class="mh-sub">Takes 60 seconds · No obligation · Rancho Cucamonga & IE</div>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <div class="frow">
+        <input class="fi" id="mn" placeholder="Your Name *"/>
+        <input class="fi" id="mp" placeholder="Phone Number *" type="tel"/>
+      </div>
+      <div class="frow">
+        <input class="fi" id="mz" placeholder="ZIP Code"/>
+        <select class="fsel" id="ms">
+          <option value="">Home Ownership</option>
+          <option>I Own My Home</option>
+          <option>I Rent</option>
+        </select>
+      </div>
+      <select class="fsel" id="mb">
+        <option value="">Monthly Electric Bill</option>
+        <option>Under $150/mo</option>
+        <option>$150 - $250/mo</option>
+        <option>$250 - $400/mo</option>
+        <option>$400+/mo</option>
+      </select>
+      <button class="sbtn" id="msub" onclick="submitModal()">Check My Eligibility →</button>
+      <p class="fnote">🔒 Your info is only shared with selected energy savings pros for quote purposes.</p>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <div class="msi">🎉</div>
+      <div class="mst">You May Qualify!</div>
+      <div class="mss">A local energy savings specialist will call you within 30 minutes to confirm your eligibility for the free washer & dryer offer.<br/><br/>Questions? Call us:<br/><a href="tel:9515054671" style="color:var(--green);font-weight:700;">(951) 505-4671</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- OFFER BANNER -->
+<div class="offer-banner">
+  <span class="ob-pulse"></span>
+  <span class="ob-text">🎁 Limited Offer: <strong>Free Washer & Dryer</strong> for qualifying IE homeowners</span>
+  <button class="ob-btn" onclick="openModal()">See If You Qualify</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <span class="nlogo-name">IE Energy Savings</span>
+    <span class="nlogo-tag">Home Efficiency Program · Inland Empire</span>
+  </div>
+  <ul class="nlinks">
+    <li><a href="#qualify">Do I Qualify?</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#areas">Service Areas</a></li>
+  </ul>
+  <div class="nright">
+    <a href="tel:9515054671" class="nphone">(951) 505-4671</a>
+    <button class="btn-nav" onclick="openModal()">Check Eligibility</button>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('mobmenu').classList.add('open')" aria-label="Menu">
+    <span/><span/><span/>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mobmenu">
+  <button onclick="document.getElementById('mobmenu').classList.remove('open')" style="position:absolute;top:24px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--dark);">✕</button>
+  <a href="#qualify" onclick="document.getElementById('mobmenu').classList.remove('open')">Do I Qualify?</a>
+  <a href="#how" onclick="document.getElementById('mobmenu').classList.remove('open')">How It Works</a>
+  <a href="#areas" onclick="document.getElementById('mobmenu').classList.remove('open')">Service Areas</a>
+  <button class="btn-nav" onclick="openModal();document.getElementById('mobmenu').classList.remove('open')">Check Eligibility</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Rancho Cucamonga · Chino Hills · Upland · IE</div>
+      <h1>Lower Your<br/>Electric Bill <em>and</em><br/>Get a <span class="highlight">Free</span><br/>Washer & Dryer.</h1>
+      <p class="hero-sub">Qualifying homeowners in the Inland Empire can dramatically reduce their monthly energy costs — and receive a brand new washer & dryer at no cost.</p>
+      <div class="hero-offer-box">
+        <div class="hob-label">🎁 Limited Time Offer</div>
+        <div class="hob-title">Free Washer & Dryer for Qualifying Homeowners</div>
+        <div class="hob-sub">Homeowners who qualify for our energy savings program may receive a complimentary washer & dryer as part of their upgrade package. Check your eligibility today.</div>
+      </div>
+      <div class="hero-trust">
+        <span class="ht">No Cost to Check Eligibility</span>
+        <span class="ht">No Obligation</span>
+        <span class="ht">Serving All IE Cities</span>
+        <span class="ht">Local Specialists</span>
+      </div>
+      <div class="hero-cta-row">
+        <button class="btn-primary" onclick="openModal()">Check My Eligibility →</button>
+        <a href="tel:9515054671" class="btn-outline">📞 (951) 505-4671</a>
+      </div>
+      <p class="hero-areas">Serving <strong>Rancho Cucamonga</strong>, <strong>Chino Hills</strong>, <strong>Upland</strong>, <strong>Ontario</strong>, <strong>Claremont</strong>, <strong>Fontana</strong> & all of the Inland Empire</p>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-g1"></div>
+      <div class="hv-g2"></div>
+      <div class="hv-inner">
+        <div class="hv-eyebrow">IE Energy Savings Program</div>
+        <div class="hv-big">Cut<br/><span>Bills.</span></div>
+        <div class="hv-sub">Get rewarded for it.</div>
+        <div class="hv-divider"></div>
+        <div class="hv-offer">
+          <div class="hvo-label">🎁 Qualifying Homeowners Receive</div>
+          <div class="hvo-title">Free Washer & Dryer</div>
+          <div class="hvo-sub">Included with your energy savings upgrade for eligible IE homeowners. Limited availability.</div>
+        </div>
+        <div class="hv-checks">
+          <div class="hv-check">Dramatically lower monthly electric bills</div>
+          <div class="hv-check">Free home energy savings analysis</div>
+          <div class="hv-check">Local specialists, same-day available</div>
+          <div class="hv-check">No obligation to check eligibility</div>
+        </div>
+        <div class="hv-stats">
+          <div class="hvstat"><span class="hvstat-num">Free</span><div class="hvstat-label">Analysis</div></div>
+          <div class="hvstat"><span class="hvstat-num">Local</span><div class="hvstat-label">IE Pros</div></div>
+          <div class="hvstat"><span class="hvstat-num">Fast</span><div class="hvstat-label">Response</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="tb">Free Eligibility Check</span>
+    <span class="tb">No Obligation</span>
+    <span class="tb">Local IE Specialists</span>
+    <span class="tb">Same-Day Available</span>
+    <span class="tb">Serving Rancho Cucamonga & IE</span>
+  </div>
+</div>
+
+<!-- QUALIFY SECTION -->
+<section class="sec qualify-bg" id="qualify">
+  <div class="seci">
+    <div class="slabel">Do You Qualify?</div>
+    <h2 class="sh2">Homeowners Who <em>May Qualify</em></h2>
+    <div class="qualify-grid">
+      <div class="qualify-cards">
+        <div class="qcard active">
+          <div class="qcard-icon">🏡</div>
+          <div class="qcard-title">You Own Your Home</div>
+          <div class="qcard-desc">Homeowners in Rancho Cucamonga, Chino Hills, Upland, and surrounding IE cities may qualify.</div>
+        </div>
+        <div class="qcard">
+          <div class="qcard-icon">⚡</div>
+          <div class="qcard-title">High Electric Bills</div>
+          <div class="qcard-desc">If you're paying over $150/month to SCE or other providers, you're likely a strong candidate.</div>
+        </div>
+        <div class="qcard">
+          <div class="qcard-icon">📋</div>
+          <div class="qcard-title">No Recent Energy Upgrades</div>
+          <div class="qcard-desc">Homes that haven't had recent energy efficiency upgrades typically qualify for the best programs.</div>
+        </div>
+        <div class="qcard">
+          <div class="qcard-icon">📍</div>
+          <div class="qcard-title">Inland Empire Location</div>
+          <div class="qcard-desc">We serve all cities across the IE — Rancho Cucamonga, Chino Hills, Upland, Ontario, Fontana & more.</div>
+        </div>
+      </div>
+      <div class="qualify-right">
+        <div class="qr-inner">
+          <div class="qr-label">Check Your Eligibility</div>
+          <div class="qr-title">See If You Qualify for a <span>Free Washer & Dryer</span></div>
+          <div class="qr-sub">Takes 60 seconds. A local specialist will review your eligibility and walk you through the program — completely free, no obligation.</div>
+          <div class="qr-offer">
+            <div class="qr-offer-label">🎁 What Qualifying Homeowners Receive</div>
+            <div class="qr-offer-text">A free washer & dryer unit, plus a customized energy savings plan designed to lower your monthly electric bill significantly.</div>
+          </div>
+          <button class="qr-btn" onclick="openModal()">Check My Eligibility Now →</button>
+          <div class="qr-note">No cost · No obligation · No pressure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec how-bg" id="how">
+  <div class="seci">
+    <div class="slabel">Simple Process</div>
+    <h2 class="sh2">How It <em>Works</em></h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <div class="how-icon">📋</div>
+        <div class="how-title">Check Eligibility</div>
+        <div class="how-desc">Answer 3 quick questions. We'll confirm whether you qualify for the free offer and energy savings program.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <div class="how-icon">🏠</div>
+        <div class="how-title">Free Home Analysis</div>
+        <div class="how-desc">A local specialist reviews your home's energy profile and shows you exactly how much you could save.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <div class="how-icon">⚡</div>
+        <div class="how-title">Upgrade & Save</div>
+        <div class="how-desc">Your energy savings system is installed by a certified local professional. Start saving immediately.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">04</div>
+        <div class="how-icon">🎁</div>
+        <div class="how-title">Receive Your Appliance</div>
+        <div class="how-desc">Qualifying homeowners receive their free washer & dryer delivered and set up at no cost.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="sec areas-bg" id="areas">
+  <div class="seci">
+    <div class="slabel">Where We Serve</div>
+    <h2 class="sh2">Serving Homeowners Across the <em>Inland Empire</em></h2>
+    <div class="areas-grid">
+      <div class="area-card" onclick="openModal()">
+        <div class="area-city">Rancho Cucamonga</div>
+        <div class="area-zip">ZIP: 91730 · 91701 · 91739</div>
+        <div class="area-tags"><span class="atag">Energy Savings</span><span class="atag">Free Analysis</span></div>
+        <p class="area-desc">Homeowners in <strong>Rancho Cucamonga</strong> with high SCE bills may qualify for our free energy savings program and appliance offer.</p>
+        <button class="area-btn">Check Eligibility in Rancho →</button>
+      </div>
+      <div class="area-card" onclick="openModal()">
+        <div class="area-city">Chino Hills</div>
+        <div class="area-zip">ZIP: 91709</div>
+        <div class="area-tags"><span class="atag">Premium Homes</span><span class="atag">Energy Efficiency</span></div>
+        <p class="area-desc"><strong>Chino Hills</strong> homeowners with larger properties often see the greatest energy savings. Check your eligibility today.</p>
+        <button class="area-btn">Check Eligibility in Chino Hills →</button>
+      </div>
+      <div class="area-card" onclick="openModal()">
+        <div class="area-city">Upland</div>
+        <div class="area-zip">ZIP: 91784 · 91786</div>
+        <div class="area-tags"><span class="atag">Energy Savings</span><span class="atag">Free Offer</span></div>
+        <p class="area-desc">Serving <strong>Upland</strong> homeowners with customized energy savings programs. Free eligibility check available now.</p>
+        <button class="area-btn">Check Eligibility in Upland →</button>
+      </div>
+      <div class="area-card" onclick="openModal()">
+        <div class="area-city">Ontario</div>
+        <div class="area-zip">ZIP: 91762 · 91761</div>
+        <div class="area-tags"><span class="atag">Energy Program</span><span class="atag">IE Specialists</span></div>
+        <p class="area-desc"><strong>Ontario</strong> homeowners — find out if you qualify for our free energy savings analysis and appliance offer.</p>
+        <button class="area-btn">Check Eligibility in Ontario →</button>
+      </div>
+      <div class="area-card" onclick="openModal()">
+        <div class="area-city">Claremont</div>
+        <div class="area-zip">ZIP: 91711</div>
+        <div class="area-tags"><span class="atag">Premium Program</span><span class="atag">High Efficiency</span></div>
+        <p class="area-desc">Upscale <strong>Claremont</strong> homes qualify for premium energy savings packages. Check eligibility today.</p>
+        <button class="area-btn">Check Eligibility in Claremont →</button>
+      </div>
+      <div class="area-card" onclick="openModal()">
+        <div class="area-city">Fontana</div>
+        <div class="area-zip">ZIP: 92335 · 92336</div>
+        <div class="area-tags"><span class="atag">Energy Savings</span><span class="atag">Local Pros</span></div>
+        <p class="area-desc"><strong>Fontana</strong> homeowners paying high electric bills may qualify for significant savings and our free appliance offer.</p>
+        <button class="area-btn">Check Eligibility in Fontana →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAVINGS NUMBERS -->
+<section class="savings-bg">
+  <div class="savings-inner">
+    <div class="savings-label">The Numbers</div>
+    <div class="savings-title">Why SoCal Homeowners Are Acting Now</div>
+    <div class="savings-sub">SCE rates have increased significantly. Energy savings programs help homeowners take control.</div>
+    <div class="savings-grid">
+      <div class="scard">
+        <div class="scard-num">$300+</div>
+        <div class="scard-label">Average Monthly SCE Bill</div>
+        <div class="scard-desc">Many IE homeowners are paying well over $300/month — especially in summer months with AC running.</div>
+      </div>
+      <div class="scard">
+        <div class="scard-num">50-80%</div>
+        <div class="scard-label">Potential Bill Reduction</div>
+        <div class="scard-desc">Qualifying homeowners can potentially reduce their monthly electric costs significantly with the right energy system.</div>
+      </div>
+      <div class="scard">
+        <div class="scard-num">Free</div>
+        <div class="scard-label">Eligibility Check</div>
+        <div class="scard-desc">There is absolutely no cost to check whether you qualify. No pressure, no obligation, no commitment required.</div>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="openModal()" style="padding:16px 40px;font-size:14px;">Check My Eligibility Now →</button>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec rev-bg" id="reviews">
+  <div class="seci">
+    <div class="slabel">What Homeowners Say</div>
+    <h2 class="sh2">Real Results from <em>IE Homeowners</em></h2>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"I was skeptical but my bill went from $380 to under $90 a month. And the washer and dryer were delivered within two weeks. Absolutely worth it."</p>
+        <div class="rev-name">Local Homeowner</div>
+        <div class="rev-area">Rancho Cucamonga, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"The whole process was easy. Someone came out, explained everything clearly, no pressure at all. We qualified and the savings are real."</p>
+        <div class="rev-name">Local Homeowner</div>
+        <div class="rev-area">Chino Hills, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Checked my eligibility in 2 minutes online. Got a call back fast. Professional team, great experience. Our electric bill is a fraction of what it was."</p>
+        <div class="rev-name">Local Homeowner</div>
+        <div class="rev-area">Upland, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-title">Ready to Lower Your Bill<br/><em>and Get Your Free Appliance?</em></div>
+  <div class="cta-sub">Check your eligibility in 60 seconds. No obligation, no pressure.</div>
+  <div class="cta-btns">
+    <button class="btn-dark" onclick="openModal()">Check My Eligibility →</button>
+    <a href="tel:9515054671" class="btn-outline-dark">📞 Call (951) 505-4671</a>
+  </div>
+</section>
+
+<!-- INFO -->
+<div class="info-bar">
+  <div class="info-grid">
+    <div><div class="iicon">📍</div><div class="ititle">Service Area</div><div class="ibody">Rancho Cucamonga, Chino Hills,<br/>Upland, Ontario & all of the IE</div></div>
+    <div><div class="iicon">🕐</div><div class="ititle">Hours</div><div class="ibody">Mon–Sat: 8am–7pm<br/><strong>Free Eligibility Check 24/7</strong></div></div>
+    <div><div class="iicon">📞</div><div class="ititle">Call Anytime</div><div class="ibody"><a href="tel:9515054671"><strong>(951) 505-4671</strong></a><br/>Free eligibility check, no obligation</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="fbrand">IE Energy Savings</div>
+        <div class="ftagline">Home Efficiency Program · Inland Empire</div>
+        <p class="fdesc">Connecting IE homeowners with energy savings specialists. Serving Rancho Cucamonga, Chino Hills, Upland, and surrounding areas.</p>
+        <a href="tel:9515054671" class="fphone">(951) 505-4671</a>
+      </div>
+      <div>
+        <div class="fctitle">Program</div>
+        <ul class="flinks">
+          <li><a onclick="openModal()">Check Eligibility</a></li>
+          <li><a href="#qualify">Do I Qualify?</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a onclick="openModal()">Free Analysis</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fctitle">Service Areas</div>
+        <ul class="flinks">
+          <li><a onclick="openModal()">Rancho Cucamonga</a></li>
+          <li><a onclick="openModal()">Chino Hills</a></li>
+          <li><a onclick="openModal()">Upland</a></li>
+          <li><a onclick="openModal()">Ontario</a></li>
+          <li><a onclick="openModal()">Claremont</a></li>
+          <li><a onclick="openModal()">Fontana</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fctitle">Company</div>
+        <ul class="flinks">
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a onclick="openModal()">Get Free Quote</a></li>
+          <li><a href="tel:9515054671">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <div class="fcopy">© 2025 IE Energy Savings. All Rights Reserved. Serving the Inland Empire, CA.</div>
+      <div class="faward">🌿 Helping IE Homeowners Save Energy</div>
+    </div>
+  </div>
+</footer>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p>* Free washer & dryer offer available to qualifying homeowners only. Eligibility is subject to program requirements, home ownership verification, and availability. This offer is provided by participating energy savings program providers, not IE Energy Savings directly. IE Energy Savings connects homeowners with local energy specialists for informational and lead matching purposes only. Individual results and savings may vary. Not all homeowners will qualify. Contact us for complete eligibility details.</p>
+</div>
+
+<a href="tel:9515054671" class="smob">🎁 Free Washer & Dryer — Check Eligibility Now</a>
+
+<script>
+const ZAPIER = "https://hooks.zapier.com/hooks/catch/27593826/4y03nma/";
+
+function openModal() {
+  document.getElementById('modal').classList.add('open');
+  setTimeout(() => document.getElementById('mn').focus(), 100);
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  setTimeout(() => {
+    document.getElementById('modal-body').style.display = 'block';
+    document.getElementById('modal-success').style.display = 'none';
+    document.getElementById('msub').disabled = false;
+    document.getElementById('msub').textContent = 'Check My Eligibility →';
+    ['mn','mp','mz'].forEach(id => document.getElementById(id).value = '');
+  }, 300);
+}
+
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal')) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+async function submitModal() {
+  const n = document.getElementById('mn').value.trim();
+  const p = document.getElementById('mp').value.trim();
+  if (!n || !p) { alert('Please enter your name and phone number.'); return; }
+  const btn = document.getElementById('msub');
+  btn.disabled = true; btn.textContent = 'Checking Eligibility...';
+  await zap({
+    name: n, phone: p,
+    zip: document.getElementById('mz').value,
+    ownership: document.getElementById('ms').value,
+    bill: document.getElementById('mb').value,
+    form: 'energy-modal',
+    page: 'IE Energy Savings'
+  });
+  document.getElementById('modal-body').style.display = 'none';
+  document.getElementById('modal-success').style.display = 'block';
+}
+
+async function zap(data) {
+  try {
+    await fetch(ZAPIER, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({...data, timestamp: new Date().toISOString(), source: 'IE Energy Savings Landing'})
+    });
+  } catch(e) {}
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
